@@ -2,14 +2,19 @@
 
 # Base image with nginx, php-fpm and composer built on debian
 FROM wyveo/nginx-php-fpm:php74 as base
-RUN apt-get update && apt-get install -y wait-for-it libxrender1
+# ADAPTACION TAREA 1: Debian buster ya no esta en los repos habituales.
+RUN sed -i 's|deb.debian.org|archive.debian.org|g; s|security.debian.org|archive.debian.org|g; /buster-updates/d; /nginx.org/d; /sury.org/d' /etc/apt/sources.list \
+    && rm -f /etc/apt/sources.list.d/* \
+    && apt-get -o Acquire::Check-Valid-Until=false update \
+    && apt-get install -y wait-for-it libxrender1
 
 # Set up code
 WORKDIR /usr/share/nginx/html
 COPY . .
 
 # run composer, chmod files, setup laravel key
-RUN ./scripts/setup
+# ADAPTACION TAREA 1: scripts/setup llega con finales de linea CRLF (Windows) y falla con "not found".
+RUN sed -i 's/\r$//' ./scripts/setup && chmod +x ./scripts/setup && ./scripts/setup
 
 # The worker container runs the laravel queue in the background
 FROM base as worker
