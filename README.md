@@ -193,7 +193,7 @@ Acceso: `https://localhost:8081`. Los correos de prueba se ven en `http://localh
 
 ## 7. Evidencias
 
-| Comprobación | Evidencia | Fecha |
+| Comprobación | Evidencia |
 |---|---|---|---|
 | Imagen base construida | `docs/ERRORES/02-build-base-ok-tarea1.png` |
 | Servicios iniciados | `docs/ERRORES/05-compose-ps-5-servicios.png` |
