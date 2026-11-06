@@ -97,8 +97,6 @@ Con este recorrido se pasa por todas las partes: la interfaz (React + TypeScript
 | Obligatoria | Que los datos se guarden aunque se reinicie el entorno | RQ-08 |
 | Obligatoria | Mantener lo que ya funciona (acceso, eventos, entradas, asistentes, página pública) | RQ-09 |
 | Obligatoria | Migrar los datos acordados sin duplicarlos | RQ-10 |
-| Obligatoria (Fase 2) | Desplegar Laravel y MySQL en AWS Learner Lab | Se planifica en T5 |
-| Obligatoria (T4) | El cambio de requisito que diga el profesor | Se verá en T4 |
 | Deseable | Editar una sesión y cambiar si está publicada | RQ-11 |
 | Deseable | Avisar si dos sesiones coinciden en la misma sala | RQ-12 |
 | Opcional | Filtrar el programa público por día y sala | — |
